@@ -1,0 +1,33 @@
+{
+    "editor.renderWhitespace": "trailing",
+    "editor.multiCursorModifier": "ctrlCmd",
+    "editor.cursorSmoothCaretAnimation": "on",
+    "editor.fontLigatures": true,
+    "prettier.tabWidth": 4,
+    "editor.minimap.autohide": true,
+    "security.workspace.trust.startupPrompt": "always",
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true,
+    "prettier.printWidth": 120,
+    "prettier.arrowParens": "avoid",
+    "workbench.colorTheme": "Catppuccin Mocha",
+    "window.menuBarVisibility": "toggle",
+    "diffEditor.hideUnchangedRegions.enabled": true,
+    "workbench.list.smoothScrolling": true,
+    "editor.smoothScrolling": true,
+    "terminal.integrated.smoothScrolling": true,
+    "javascript.preferences.importModuleSpecifierEnding": "minimal",
+    "typescript.preferences.importModuleSpecifierEnding": "minimal",
+    "editor.codeActionsOnSave": {
+        "source.organizeImports": "explicit"
+    },
+    "codeium.enableCodeLens": false,
+    "typescript.preferences.preferTypeOnlyAutoImports": true,
+    "editor.suggestSelection": "recentlyUsedByPrefix",
+    "workbench.iconTheme": "catppuccin-mocha",
+    "git.enableSmartCommit": true,
+    "codeium.enableConfig": {
+        "*": true,
+        "fish": true
+    }
+}
