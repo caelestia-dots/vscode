@@ -9,14 +9,13 @@ const update = async () => {
         return;
     }
 
-    const scheme = (await readFile(homedir() + "/.cache/caelestia/scheme/current.txt", "utf-8")).trim();
+    const scheme = await readFile(homedir() + "/.cache/caelestia/scheme/current.txt", "utf-8");
+    const colours = scheme.split("\n").reduce((acc, l) => {
+        const [name, hex] = l.split(" ");
+        acc[name] = `#${hex}`;
+        return acc;
+    }, {} as { [k: string]: string });
 
-    if (!existsSync(`${homedir()}/.config/caelestia/vscode/schemes/${scheme}.json`)) {
-        console.log(`Invalid scheme: ${scheme}`);
-        return;
-    }
-
-    const colours = JSON.parse(await readFile(`${homedir()}/.config/caelestia/vscode/schemes/${scheme}.json`, "utf-8"));
     const config = workspace.getConfiguration();
     await config.update(
         "catppuccin.colorOverrides",
@@ -25,7 +24,7 @@ const update = async () => {
     );
     commands.executeCommand("workbench.action.reloadWindow");
 
-    console.log(`Updated scheme to ${scheme}.`);
+    console.log("Updated scheme.");
 };
 
 export const activate = (context: ExtensionContext) => {
