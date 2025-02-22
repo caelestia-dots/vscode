@@ -3,13 +3,15 @@ import { readFile } from "fs/promises";
 import { homedir } from "os";
 import { commands, ConfigurationTarget, RelativePattern, workspace, type ExtensionContext } from "vscode";
 
+const statedir = () => process.env["XDG_STATE_HOME"] ?? homedir() + "/.local/state";
+
 const update = async () => {
-    if (!existsSync(homedir() + "/.cache/caelestia/scheme/current.txt")) {
+    if (!existsSync(statedir() + "/caelestia/scheme/current.txt")) {
         console.log("No current scheme.");
         return;
     }
 
-    const scheme = await readFile(homedir() + "/.cache/caelestia/scheme/current.txt", "utf-8");
+    const scheme = await readFile(statedir() + "/caelestia/scheme/current.txt", "utf-8");
     const colours = scheme.split("\n").reduce((acc, l) => {
         const [name, hex] = l.split(" ");
         acc[name] = `#${hex}`;
@@ -29,8 +31,8 @@ const update = async () => {
 
 export const activate = (context: ExtensionContext) => {
     const watcher = workspace.createFileSystemWatcher(
-        new RelativePattern(homedir() + "/.cache/caelestia/scheme", "current.txt")
+        new RelativePattern(statedir() + "/caelestia/scheme", "current.txt")
     );
     context.subscriptions.push(watcher, watcher.onDidCreate(update), watcher.onDidChange(update));
-    console.log(`Watching for changes to ${homedir()}/.cache/caelestia/scheme/current.txt`);
+    console.log(`Watching for changes to ${statedir()}/caelestia/scheme/current.txt`);
 };
