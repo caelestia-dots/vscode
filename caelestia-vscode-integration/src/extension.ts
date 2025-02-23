@@ -19,6 +19,8 @@ const update = async () => {
     }, {} as { [k: string]: string });
 
     const config = workspace.getConfiguration();
+    if (JSON.stringify(config.get("catppuccin.colorOverrides.mocha")) === JSON.stringify(colours)) return;
+
     await config.update(
         "catppuccin.colorOverrides",
         { ...config.get("catppuccin.colorOverrides"), mocha: colours },
