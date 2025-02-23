@@ -30,6 +30,7 @@ const update = async () => {
 };
 
 export const activate = (context: ExtensionContext) => {
+    update();
     const watcher = workspace.createFileSystemWatcher(
         new RelativePattern(statedir() + "/caelestia/scheme", "current.txt")
     );
