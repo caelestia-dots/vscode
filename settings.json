@@ -29,5 +29,8 @@
     "codeium.enableConfig": {
         "*": true,
         "fish": true
+    },
+    "[c]": {
+        "editor.defaultFormatter": "llvm-vs-code-extensions.vscode-clangd"
     }
 }
