@@ -10,7 +10,7 @@
     "editor.formatOnSave": true,
     "prettier.printWidth": 120,
     "prettier.arrowParens": "avoid",
-    "workbench.colorTheme": "Catppuccin Mocha",
+    "workbench.colorTheme": "Caelestia",
     "window.menuBarVisibility": "toggle",
     "diffEditor.hideUnchangedRegions.enabled": true,
     "workbench.list.smoothScrolling": true,

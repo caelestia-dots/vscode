@@ -2,13 +2,12 @@
     "name": "caelestia-vscode-integration",
     "displayName": "caelestia-vscode-integration",
     "description": "VSCode integration for caelestia dotfiles",
-    "version": "0.0.5",
+    "version": "1.0.0",
     "engines": {
-        "vscode": "^1.96.0",
-        "node": ">=20.0.0"
+        "vscode": "^1.96.0"
     },
     "categories": [
-        "Other"
+        "Themes"
     ],
     "activationEvents": [
         "onStartupFinished"
@@ -19,16 +18,30 @@
         }
     },
     "main": "./out/extension.js",
+    "contributes": {
+        "themes": [
+            {
+                "label": "Caelestia",
+                "uiTheme": "vs-dark",
+                "path": "./themes/caelestia.json",
+                "_watch": true
+            }
+        ]
+    },
     "repository": {
         "type": "git",
         "url": "https://github.com/caelestia-dots/vscode.git",
         "directory": "caelestia-vscode-integration"
     },
+    "dependencies": {
+        "tinycolor2": "^1.6.0"
+    },
     "devDependencies": {
         "@types/node": "20.x",
+        "@types/tinycolor2": "^1.4.6",
         "@types/vscode": "^1.96.0",
-        "typescript": "^5.7.2",
-        "@vscode/vsce": "^3.2.1"
+        "@vscode/vsce": "^3.2.1",
+        "typescript": "^5.7.2"
     },
     "scripts": {
         "vscode:prepublish": "tsc -p ./"
