@@ -3,6 +3,7 @@
     "displayName": "caelestia-vscode-integration",
     "description": "VSCode integration for caelestia dotfiles",
     "version": "1.0.0",
+    "publisher": "soramanew",
     "engines": {
         "vscode": "^1.96.0"
     },
