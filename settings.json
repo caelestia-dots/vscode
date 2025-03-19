@@ -11,7 +11,6 @@
     "prettier.printWidth": 120,
     "prettier.arrowParens": "avoid",
     "workbench.colorTheme": "Caelestia",
-    "window.menuBarVisibility": "toggle",
     "diffEditor.hideUnchangedRegions.enabled": true,
     "workbench.list.smoothScrolling": true,
     "editor.smoothScrolling": true,
