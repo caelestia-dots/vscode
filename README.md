@@ -1,5 +1,7 @@
 # caelestia-vscode
 
+## THIS REPO IS ARCHIVED IN FAVOUR OF https://github.com/caelestia-dots/caelestia
+
 ![showcase](https://github.com/caelestia-dots/readme/blob/main/vscode/showcase.gif)
 
 VSCpde/VSCodium config for my caelestia dotfiles.
